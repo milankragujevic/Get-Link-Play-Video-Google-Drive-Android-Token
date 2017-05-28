@@ -5,7 +5,7 @@ var v2getter=require('../models/v2Getter');
 router.get('/', function(req, res, next) {
   var fileId=req.query.fileId;
   console.log(fileid);
-    v2getter.getLinkVideoFromFileId(fileid,function(err,links){
+    v2getter.getLinkVideoFromFileId(fileId,function(err,links){
       console.log(links);
       res.json(links);
   });
