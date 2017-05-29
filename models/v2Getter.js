@@ -2,8 +2,8 @@
  * Created by nam on 5/28/2017.
  */
 var request = require('request');
-var emails = ['92caugiay@92wear.com'];
-var passwords = ['vietduc85'];
+var emails = [''];
+var passwords = [''];
 var deviceIds = [];
 var mapEmailTokens = {};
 var MAP_QUANTITY = {
@@ -51,7 +51,7 @@ function start() {
             }
         );
     }
-    setInterval(start, 59 * 60 * 1000);
+
 }
 function getQuantiy(url) {
     for (var key in MAP_QUANTITY) {
@@ -104,6 +104,10 @@ function getLinkVideoFromFileId(fileId,callback) {
     });
 }
 start();
+setInterval(()=>{
+    start();
+},59 * 60 * 1000);
+
 module.exports.getLinkVideoFromFileId = getLinkVideoFromFileId;
 
 setTimeout(() => {
