@@ -72,7 +72,7 @@ function getLinkVideoFromFileId(fileId,callback) {
     console.log(mapEmailTokens[emails[rand]].Auth);
     request.get(options, (err, res, video_info) => {
         if(err){
-            callback(err,[]);
+          return callback(err,[]);
         }
         video_info = ((decodeURIComponent(decodeURIComponent(video_info))));
         var s1 = 'fmt_stream_map=';
